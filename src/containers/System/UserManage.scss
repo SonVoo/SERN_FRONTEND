@@ -55,3 +55,40 @@ th {
         color: rgb(0, 0, 0) !important;
     }
 }
+
+.modal-user-container {
+    .modal-content {
+        .modal-header {
+            button {
+                color: white;
+                border: none;
+                font-size: 27px;
+                background-color: transparent;
+            }
+        }
+    }
+
+    .modal-user-body {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            width: 48%;
+
+            &.max-width-input {
+                width: 100%;
+            }
+
+            input {
+                border-radius: 3px;
+                border: 1px solid grey;
+                outline: none;
+                height: 30px;
+                padding: 0 10px;
+            }
+        }
+    }
+}
