@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-
-class Home extends Component {
+import HomeHeader from './HomeHeader';
+import Specialty from './Section/Specialty';
+class HomePage extends Component {
 
     render() {
-        const { isLoggedIn } = this.props;
-        let linkToRedirect = isLoggedIn ? '/system/user-manage' : '/home';
 
         return (
-            <Redirect to={linkToRedirect} />
+            <div>
+                <HomeHeader />
+                <Specialty />
+                <div style={{ height: '300px' }}></div>
+            </div>
         );
     }
 
@@ -26,4 +29,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

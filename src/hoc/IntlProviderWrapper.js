@@ -30,6 +30,7 @@ class IntlProviderWrapper extends Component {
 }
 
 const mapStateToProps = state => {
+    console.log(messages)
     return {
         language: state.app.language
     };
