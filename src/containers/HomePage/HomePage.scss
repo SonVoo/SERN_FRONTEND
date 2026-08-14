@@ -1,0 +1,286 @@
+.slick-track {
+    display: flex !important;
+}
+
+.slick-slide {
+    height: auto !important;
+    display: flex !important;
+    justify-content: center;
+    padding: 0 5px;
+
+    >div {
+        width: 100%;
+    }
+}
+
+// Cấu hình các nút điều hướng (Next / Prev)
+.slick-prev,
+.slick-next {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 999 !important;
+    height: 48px !important;
+    width: 40px !important;
+    border: 1px solid #d7d7d7 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        background: #eceaea !important;
+    }
+
+    &:before {
+        font-family: FontAwesome !important;
+        color: #787474 !important;
+        font-size: 20px !important;
+        opacity: 1 !important;
+    }
+}
+
+.slick-prev {
+    left: -20px !important;
+}
+
+.slick-next {
+    right: -20px !important;
+}
+
+// 2. Cấu trúc chung cho các Section
+.section-share {
+    padding-bottom: 30px;
+
+    &.section-specialty,
+    &.section-outstanding-doctor {
+        background-color: #fff;
+    }
+
+    &.section-medical-facility,
+    &.section-handbook {
+        background-color: #f5f5f5;
+    }
+
+    &.section-about {
+        border-top: #f5f5f5;
+        border-bottom: #f5f5f5;
+        ;
+        height: 500px !important;
+    }
+
+    .section-container {
+        max-width: 1140px;
+        margin: 0 auto;
+        // padding: 0 15px;
+
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+
+            .title-section {
+                font-size: 22px;
+                font-weight: 600;
+                color: #333;
+            }
+
+            .btn-section {
+                padding: 10px 15px;
+                background-color: #ebebeb;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 13px;
+                color: #2b2b2b;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    color: #fff;
+                    background-color: #5494c9;
+                }
+            }
+        }
+
+        .section-body {
+            position: relative;
+            padding: 0 10px;
+
+            .section-customize {
+                cursor: pointer;
+                outline: none;
+                background-color: #fff;
+                padding-bottom: 15px;
+
+                .bg-image {
+                    width: 100;
+                    height: 140px;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-color: #eee;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+// 3. Cấu hình hình ảnh riêng cho từng Section
+.section-specialty {
+    .section-body {
+        .section-customize {
+            .bg-image {
+                background-image: url('../../assets/specialty/kham-benh.jpg');
+            }
+        }
+    }
+}
+
+.section-medical-facility {
+    .section-body {
+        .section-customize {
+            .bg-image {
+                background-image: url('../../assets/medical-facility/medial.jpg');
+            }
+        }
+    }
+}
+
+.section-outstanding-doctor {
+    .section-body {
+        .section-customize {
+
+            .customize-border {
+                padding: 20px;
+                background: #fff;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                .outer-bg {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 10px;
+
+                    .bg-image {
+                        width: 120px;
+                        height: 120px;
+                        border-radius: 50%;
+                        margin-bottom: 0;
+                        background-image: url('../../assets/outstanding-doctor/bs.jpg');
+                    }
+                }
+
+                .position {
+                    text-align: center;
+                    font-size: 14px;
+
+                    div:first-child {
+                        font-weight: 600;
+                        color: #333;
+                        line-height: 1.2;
+                    }
+
+                    div:last-child {
+                        color: #777;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-handbook {
+    .section-body {
+        .section-customize {
+            .bg-image {
+                background-image: url('../../assets/handbook/handbook.jpg');
+            }
+        }
+    }
+}
+
+.home-footer {
+    text-align: center;
+    padding-top: 8px;
+
+    a {
+        text-decoration: none;
+    }
+
+
+}
+
+.section-about {
+    padding: 0 10px;
+
+    .section-about-header {
+        padding: 20px 10px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .section-about-center {
+        display: flex;
+        gap: 30px;
+        padding: 0 50px;
+        align-items: flex-start;
+
+        .content-left {
+            flex: 0 0 60%;
+
+            iframe {
+                width: 100%;
+                height: 320px;
+                border-radius: 8px;
+            }
+        }
+
+        .content-right {
+            flex: 0 0 38%;
+
+            .about-title {
+                font-size: 18px;
+                font-weight: 600;
+                color: #333;
+                margin-bottom: 12px;
+                line-height: 1.4;
+            }
+
+            .about-text {
+                font-size: 14px;
+                color: #555;
+                line-height: 1.5;
+                margin-bottom: 12px;
+            }
+
+            .about-list {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    font-size: 14px;
+                    color: #444;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+}
+
+.home-header-container {
+    height: 60px;
+    width: 100%;
+    padding: 0 40px;
+    position: fixed !important;
+    top: 0;
+    background: white;
+    z-index: 10000;
+}
