@@ -18,7 +18,6 @@ class UserManage extends Component {
             }
         }
     }
-
     async componentDidMount() {
         await this.getAllUsersFromReact();
     }
@@ -161,6 +160,7 @@ class UserManage extends Component {
 
 const mapStateToProps = state => {
     return {
+        language: state.app.language
     };
 };
 

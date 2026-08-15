@@ -8,16 +8,43 @@
     color: $common-text-color;
     height: 40px;
     position: relative;
+
     .btn-logout {
         color: $common-text-color;
         line-height: 40px;
         height: 40px;
         padding: 0 10px;
+
         &:hover {
             background-color: darken($colormain, 5);
         }
+
         i {
             font-size: $base-size + 1px;
+        }
+    }
+
+    .languages {
+        .language-en {
+            margin-right: 15px;
+            margin-left: 15px;
+            cursor: pointer;
+
+            &:active {
+                color: rgb(36, 36, 222);
+            }
+        }
+
+        .language-vi {
+            cursor: pointer;
+
+            &:active {
+                color: rgb(222, 173, 10);
+            }
+        }
+
+        .welcome {
+            margin-right: 10px;
         }
     }
 }

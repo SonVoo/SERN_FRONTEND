@@ -8,7 +8,8 @@
         "select-doctor": "Choose a good doctor",
         "fee": "Checkup package",
         "check-health": "General health check",
-        "support": "Support"
+        "support": "Support",
+        "welcome": "welcome, "
     },
     "banner": {
         "title1": "MEDICAL BACKGROUND",
@@ -19,5 +20,34 @@
         "child4": "Medical test",
         "child5": "Mental health",
         "child6": "Dental examination"
+    },
+    "menu": {
+        "admin": {
+            "manage-user": "Users System",
+            "manage-doctor": "Manage doctors",
+            "manage-admin": "Manage admins",
+            "crud": "CRUD user",
+            "crud-redux": "CRUD Redux",
+            "clinic": "Clinics",
+            "manage-clinic": "Manage clinics",
+            "specialty": "Specialties",
+            "manage-specialty": "Manage specialties",
+            "handbook": "Handbook",
+            "manage-handbook": "Manage handbook"
+        }
+    },
+    "manage-user": {
+        "add": "Add a new user",
+        "email": "Email",
+        "password": "Password",
+        "first-name": "First name",
+        "last-name": "Last name",
+        "phone-number": "Phone number",
+        "address": "Address",
+        "gender": "Gender",
+        "position": "Position",
+        "role": "Role",
+        "image": "Avatar",
+        "save": "Save user"
     }
 }

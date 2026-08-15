@@ -14,10 +14,10 @@ class About extends Component {
                     <div className='content-left'>
                         <iframe width="50%" height="400px" src="https://www.youtube.com/embed/147SkAVXEqM"
                             title="#51 Kết Thúc Design Giao Diện Clone BookingCare.vn 4 | React.JS Cho Người Mới Bắt Đầu"
-                            frameborder="0"
+                            frameBorder="0"
                             allow="accelerometer; 
                     autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen></iframe>
+                            allowFullScreen></iframe>
                     </div>
                     <div className="content-right">
                         <div className="about-title">

@@ -18,7 +18,7 @@
                 height: 100%;
                 width: 100%;
                 cursor: pointer;
-                transform: scale(0.5, 1);
+                transform: scale(0.7, 1);
                 margin-left: 0;
             }
 
@@ -38,7 +38,7 @@
 
             .child-content {
                 .subs-title {
-                    font-weight: 400;
+                    font-weight: 500;
                     font-size: 12px;
                 }
             }
@@ -114,7 +114,7 @@
     .content-up {
         width: 100%;
         // border: 1px solid red;
-        padding-top: 15px;
+        padding-top: 60px;
         height: 65%;
         background-image: linear-gradient(rgba(126, 126, 126, 0.25), rgba(255, 255, 255, 0.1));
 
