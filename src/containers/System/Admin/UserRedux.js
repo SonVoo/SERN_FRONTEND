@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { LANGUAGES, CRUD_ACTIONS } from '../../../utils'
+import { LANGUAGES, CRUD_ACTIONS, CommonUtils } from '../../../utils'
 import * as actions from "../../../store/actions";
 import './UserRedux.scss';
 import Lightbox from 'react-image-lightbox';
@@ -82,19 +82,21 @@ class UserRedux extends Component {
                 role: arrRoles && arrRoles.length > 0 ? arrRoles[0].key : '',
                 avatar: '',
                 action: CRUD_ACTIONS.CREATE,
-                userEditId: ''
+                previewImgURL: '',
+
             })
         }
     }
 
-    handleOnchangeImage = (event) => {
+    handleOnchangeImage = async (event) => {
         let data = event.target.files;
         let file = data[0];
         if (file) {
+            let base64 = await CommonUtils.getBase64(file);
             let objectUrl = URL.createObjectURL(file);
             this.setState({
                 previewImgURL: objectUrl,
-                avatar: file
+                avatar: base64
             })
         }
     }
@@ -108,7 +110,6 @@ class UserRedux extends Component {
 
     checkValidateInput = () => {
         let isValid = true;
-        // Nếu đang ở chế độ EDIT, có thể không bắt buộc check password nếu dùng mật khẩu cũ
         let arrCheck = ['email', 'firstName', 'lastName', 'phoneNumber', 'address'];
         if (this.state.action === CRUD_ACTIONS.CREATE) {
             arrCheck.push('password');
@@ -137,10 +138,10 @@ class UserRedux extends Component {
         if (isValid === false) return;
 
         let { action } = this.state;
-
         let userData = {
             id: this.state.userEditId,
             email: this.state.email,
+            password: this.state.password,
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             address: this.state.address,
@@ -154,11 +155,17 @@ class UserRedux extends Component {
         if (action === CRUD_ACTIONS.CREATE) {
             this.props.createNewUser(userData);
         }
+        console.log("Check userData before send:", userData);
         if (action === CRUD_ACTIONS.EDIT) {
             this.props.editUserRedux(userData);
         }
     }
     handleEditUserFromParent = (user) => {
+        let imageBase64 = '';
+        console.log("Check user image:", user.image);
+        if (user.image) {
+            imageBase64 = new Buffer(user.image, 'base64').toString('binary');
+        }
         this.setState({
             email: user.email,
             password: 'HARDCODE',
@@ -167,9 +174,10 @@ class UserRedux extends Component {
             address: user.address,
             phoneNumber: user.phoneNumber,
             gender: user.gender,
-            role: user.role || 'R1',
-            position: user.position || 'P0',
+            role: user.roleId || 'R1',
+            position: user.positionId || 'P0',
             avatar: '',
+            previewImgURL: imageBase64,
             action: CRUD_ACTIONS.EDIT,
             userEditId: user.id
         })
