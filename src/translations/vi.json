@@ -60,6 +60,7 @@
         "position": "Chức vụ",
         "role": "Quyền hạn",
         "image": "Ảnh đại diện",
-        "save": "Lưu"
+        "save": "Lưu user",
+        "edit": "Lưu thay đổi"
     }
 }

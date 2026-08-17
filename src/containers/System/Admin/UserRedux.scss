@@ -19,3 +19,16 @@
     background-size: contain;
     cursor: pointer;
 }
+
+.user-redux-container {
+    .user-redux-body {
+        .container {
+            .row {
+                .btn-primary {
+                    width: 70px;
+                    height: 35px;
+                }
+            }
+        }
+    }
+}
