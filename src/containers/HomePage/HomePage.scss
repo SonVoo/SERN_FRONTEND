@@ -4,16 +4,20 @@
 
 .slick-slide {
     height: auto !important;
-    display: flex !important;
     justify-content: center;
     padding: 0 5px;
 
     >div {
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
 
-// Cấu hình các nút điều hướng (Next / Prev)
+.slick-disabled {
+    display: none !important;
+}
+
 .slick-prev,
 .slick-next {
     position: absolute !important;
@@ -173,7 +177,7 @@
                         height: 120px;
                         border-radius: 50%;
                         margin-bottom: 0;
-                        background-image: url('../../assets/outstanding-doctor/bs.jpg');
+                        // background-image: url('../../assets/outstanding-doctor/bs.jpg');
                     }
                 }
 
